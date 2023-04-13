@@ -14,9 +14,10 @@ void main() {
   String enteredNumbers = stdin.readLineSync() ?? '';
   String evenNumbers = '';
   String oddNumbers = '';
-  for (int i = 0; i < enteredNumbers.length; i++) { //i = 0
-    if (int.parse(enteredNumbers[i]) % 2 ==
-        0) { //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
+  for (int i = 0; i < enteredNumbers.length; i++) {
+    //i = 0
+    if (int.parse(enteredNumbers[i]) % 2 == 0) {
+      //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
       evenNumbers += enteredNumbers[i]; //evenNumbers = 4
     } else {
       oddNumbers += enteredNumbers[i]; //oddNumbers = 3, oddNumbers = 5
