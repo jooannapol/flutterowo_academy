@@ -16,12 +16,32 @@ void main() {
   String evenNumbers = '';
   String oddNumbers = '';
   for (int i = 0; i < enteredNumbers.length; i++) { //i = 0
-    if (int.parse(enteredNumbers[i]) % 2 == 0) { //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
-      evenNumbers += enteredNumbers[i];           //evenNumbers = 4
+    if (int.parse(enteredNumbers[i]) % 2 ==
+        0) { //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
+      evenNumbers += enteredNumbers[i]; //evenNumbers = 4
     } else {
-      oddNumbers += enteredNumbers[i];           //oddNumbers = 3, oddNumbers = 5
+      oddNumbers += enteredNumbers[i]; //oddNumbers = 3, oddNumbers = 5
     }
   }
-  print(evenNumbers);
-  print(oddNumbers);
+
+  //printing list of even numbers separated with semicolon:
+  stdout.write('Even numbers: ');
+  for (int i = 0; i < evenNumbers.length; i++) {
+    if (i < evenNumbers.length - 1) {
+      stdout.write('${evenNumbers[i]},');
+    } else {
+      stdout.writeln(evenNumbers[i]);
+    }
+  }
+
+  //printing list of odd numbers separated with semicolon:
+  stdout.write('Odd numbers: ');
+  for (int i = 0; i < oddNumbers.length; i++) {
+    if (i < oddNumbers.length - 1) {
+      stdout.write('${oddNumbers[i]},');
+    } else {
+      stdout.writeln(oddNumbers[i]);
+    }
+  }
+
 }
