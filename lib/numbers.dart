@@ -15,7 +15,7 @@ void main() {
   String oddNumbers = '';
   for (int i = 0; i < enteredNumbers.length; i++) {
     //i = 0
-    if (int.parse(enteredNumbers[i]) % 2 == 0) {
+    if (isEven(enteredNumbers[i])) {
       //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
       evenNumbers += enteredNumbers[i]; //evenNumbers = 4
     } else {
@@ -23,10 +23,10 @@ void main() {
     }
   }
 
-  printListOfNumbers(text: 'Even numbers', numbers: evenNumbers);
-  printListOfNumbers(text: 'Odd numbers', numbers: oddNumbers);
-  printSumOfNumbers('Sum of even numbers: ', evenNumbers);
-  printSumOfNumbers('Sum of odd numbers: ', oddNumbers);
+  printListOfNumbers(message: 'Even numbers', numbers: evenNumbers,);
+  printListOfNumbers(message: 'Odd numbers', numbers: oddNumbers,);
+  //printSumOfNumbers('Sum of even numbers: ', evenNumbers);
+  //printSumOfNumbers('Sum of odd numbers: ', oddNumbers);
 }
 
 String collectNumber() {
@@ -35,10 +35,8 @@ String collectNumber() {
   return enteredNumbers;
 }
 
-
-
-void printListOfNumbers({String text = ' ', required String numbers }) {
-  stdout.write(text);
+void printListOfNumbers({String message = ' ', required String numbers}) {
+  stdout.write(message);
   for (int i = 0; i < numbers.length; i++) {
     if (i < numbers.length - 1) {
       stdout.write('${numbers[i]},');
@@ -48,8 +46,14 @@ void printListOfNumbers({String text = ' ', required String numbers }) {
   }
 }
 
-void printSumOfNumbers(String text, String numbers) {
-  stdout.write(text);
+bool isEven(String number){
+  bool result = int.parse(number) % 2 == 0;
+  return  result;
+
+}
+
+void printSumOfNumbers({String message = ' ', required String numbers}) {
+  stdout.write(message);
   int sum = 0;
   for (int i = 0; i < numbers.length; i++) {
     if (i < numbers.length - 1) {
