@@ -44,6 +44,7 @@ void main() {
     }
   }
 
+  /*
   //printing sum of the even numbers:
   stdout.write('Sum of even numbers: ');
   int evenSum = 0;
@@ -71,4 +72,24 @@ void main() {
     oddSum += value;
   }
   stdout.writeln(oddSum);
+} */
+
+  void printSumOfNumbers(String numbers) {
+    int sum = 0;
+    for (int i = 0; i < numbers.length; i++) {
+      if (i < numbers.length - 1) {
+        stdout.write('${numbers[i]}+');
+      } else {
+        stdout.write('${numbers[i]}=');
+      }
+      int value = int.parse(numbers[i]);
+      sum += value;
+    }
+    return stdout.writeln(sum);
+  }
+
+  stdout.write('Sum of even numbers: ');
+  printSumOfNumbers(evenNumbers);
+  stdout.write('Sum of odd numbers: ');
+  printSumOfNumbers(oddNumbers);
 }
