@@ -24,55 +24,15 @@ void main() {
     }
   }
 
-  //printing list of even numbers separated with semicolon:
-  stdout.write('Even numbers: ');
-  for (int i = 0; i < evenNumbers.length; i++) {
-    if (i < evenNumbers.length - 1) {
-      stdout.write('${evenNumbers[i]},');
-    } else {
-      stdout.writeln(evenNumbers[i]);
+  void printListOfNumbers(String numbers) {
+    for (int i = 0; i < numbers.length; i++) {
+      if (i < numbers.length - 1) {
+        stdout.write('${numbers[i]},');
+      } else {
+        stdout.writeln(numbers[i]);
+      }
     }
   }
-
-  //printing list of odd numbers separated with semicolon:
-  stdout.write('Odd numbers: ');
-  for (int i = 0; i < oddNumbers.length; i++) {
-    if (i < oddNumbers.length - 1) {
-      stdout.write('${oddNumbers[i]},');
-    } else {
-      stdout.writeln(oddNumbers[i]);
-    }
-  }
-
-  /*
-  //printing sum of the even numbers:
-  stdout.write('Sum of even numbers: ');
-  int evenSum = 0;
-  for (int i = 0; i < evenNumbers.length; i++) {
-    if (i < evenNumbers.length - 1) {
-      stdout.write('${evenNumbers[i]}+');
-    } else {
-      stdout.write('${evenNumbers[i]}=');
-    }
-    int value = int.parse(evenNumbers[i]);
-    evenSum += value;
-  }
-  stdout.writeln(evenSum);
-
-  // printing sum of the odd numbers:
-  stdout.write('Sum of odd numbers: ');
-  int oddSum = 0;
-  for (int i = 0; i < oddNumbers.length; i++) {
-    if (i < oddNumbers.length - 1) {
-      stdout.write('${oddNumbers[i]}+');
-    } else {
-      stdout.write('${oddNumbers[i]}=');
-    }
-    int value = int.parse(oddNumbers[i]);
-    oddSum += value;
-  }
-  stdout.writeln(oddSum);
-} */
 
   void printSumOfNumbers(String numbers) {
     int sum = 0;
@@ -88,6 +48,10 @@ void main() {
     return stdout.writeln(sum);
   }
 
+  stdout.write('Even numbers: ');
+  printListOfNumbers(evenNumbers);
+  stdout.write('Odd numbers: ');
+  printListOfNumbers(oddNumbers);
   stdout.write('Sum of even numbers: ');
   printSumOfNumbers(evenNumbers);
   stdout.write('Sum of odd numbers: ');
