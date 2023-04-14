@@ -24,7 +24,8 @@ void main() {
     }
   }
 
-  void printListOfNumbers(String numbers) {
+  void printListOfNumbers(String text, String numbers) {
+    stdout.write(text);
     for (int i = 0; i < numbers.length; i++) {
       if (i < numbers.length - 1) {
         stdout.write('${numbers[i]},');
@@ -34,7 +35,8 @@ void main() {
     }
   }
 
-  void printSumOfNumbers(String numbers) {
+  void printSumOfNumbers(String text, String numbers) {
+    stdout.write(text);
     int sum = 0;
     for (int i = 0; i < numbers.length; i++) {
       if (i < numbers.length - 1) {
@@ -48,12 +50,8 @@ void main() {
     return stdout.writeln(sum);
   }
 
-  stdout.write('Even numbers: ');
-  printListOfNumbers(evenNumbers);
-  stdout.write('Odd numbers: ');
-  printListOfNumbers(oddNumbers);
-  stdout.write('Sum of even numbers: ');
-  printSumOfNumbers(evenNumbers);
-  stdout.write('Sum of odd numbers: ');
-  printSumOfNumbers(oddNumbers);
+  printListOfNumbers('Even numbers: ', evenNumbers);
+  printListOfNumbers('Odd numbers: ', oddNumbers);
+  printSumOfNumbers('Sum of even numbers: ', evenNumbers);
+  printSumOfNumbers('Sum of odd numbers: ', oddNumbers);
 }
