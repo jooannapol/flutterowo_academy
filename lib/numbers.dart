@@ -10,12 +10,12 @@ void main() {
   6. i to samo z nieparzystymi
    */
 
-  String enteredNumbers = collectNumber();
+  String enteredNumbers = getNumber();
   String evenNumbers = '';
   String oddNumbers = '';
   for (int i = 0; i < enteredNumbers.length; i++) {
     //i = 0
-    if (isEven(enteredNumbers[i])) {
+    if (isEven(enteredNumbers, i)) {
       //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
       evenNumbers += enteredNumbers[i]; //evenNumbers = 4
     } else {
@@ -23,13 +23,22 @@ void main() {
     }
   }
 
-  printListOfNumbers(message: 'Even numbers', numbers: evenNumbers,);
-  printListOfNumbers(message: 'Odd numbers', numbers: oddNumbers,);
+  printListOfNumbers(
+    message: 'Even numbers',
+    numbers: evenNumbers,
+  );
+  printListOfNumbers(
+    message: 'Odd numbers',
+    numbers: oddNumbers,
+  );
   //printSumOfNumbers('Sum of even numbers: ', evenNumbers);
   //printSumOfNumbers('Sum of odd numbers: ', oddNumbers);
 }
 
-String collectNumber() {
+bool isEven(String enteredNumbers, int index) =>
+    int.parse(enteredNumbers[index]) % 2 == 0;
+
+String getNumber() {
   stdout.writeln('Enter numbers');
   String enteredNumbers = stdin.readLineSync() ?? '';
   return enteredNumbers;
@@ -46,11 +55,6 @@ void printListOfNumbers({String message = ' ', required String numbers}) {
   }
 }
 
-bool isEven(String number){
-  bool result = int.parse(number) % 2 == 0;
-  return  result;
-
-}
 
 void printSumOfNumbers({String message = ' ', required String numbers}) {
   stdout.write(message);
