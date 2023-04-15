@@ -9,13 +9,20 @@ import 'dart:io';
 
  */
 void main(){
+  String enteredText = getText();
+  reverseText(enteredText);
+}
+
+String getText(){
   stdout.write('Write a sentence to reverse ');
-  String enteredText = stdin.readLineSync()!;
+  String text = stdin.readLineSync()!;
+  return text;
+}
+
+void reverseText(String text){
   String reversedText = '';
-  for(int i = enteredText.length - 1; i >= 0; i--){
-  reversedText += enteredText[i];
+  for(int i = text.length - 1; i >= 0; i--){
+    reversedText += text[i];
   }
-  print(reversedText);
-
-
+  stdout.write(reversedText);
 }
