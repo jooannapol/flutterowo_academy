@@ -18,22 +18,30 @@ void main() {
     if (isEven(enteredNumbers, i)) {
       //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
       evenNumbers += enteredNumbers[i]; //evenNumbers = 4
+
     } else {
       oddNumbers += enteredNumbers[i]; //oddNumbers = 3, oddNumbers = 5
     }
   }
 
   printListOfNumbers(
-    message: 'Even numbers',
+    message: 'Even numbers ',
     numbers: evenNumbers,
   );
   printListOfNumbers(
-    message: 'Odd numbers',
-    numbers: oddNumbers,
+    message: 'Odd numbers ',
+     numbers: oddNumbers,
   );
-  //printSumOfNumbers('Sum of even numbers: ', evenNumbers);
-  //printSumOfNumbers('Sum of odd numbers: ', oddNumbers);
+
+   printListOfNumbers(
+      message: 'Sum of even numbers: ',
+      numbers: evenNumbers,
+      separator: '+',
+      endMark: '=');
+
+   stdout.write(getSum(numbers: enteredNumbers));
 }
+
 
 bool isEven(String enteredNumbers, int index) =>
     int.parse(enteredNumbers[index]) % 2 == 0;
@@ -44,29 +52,26 @@ String getNumber() {
   return enteredNumbers;
 }
 
-void printListOfNumbers({String message = ' ', required String numbers}) {
+void printListOfNumbers(
+    {String message = ' ',
+    required String numbers,
+    String? separator = ',',
+    String endMark = ''}) {
   stdout.write(message);
   for (int i = 0; i < numbers.length; i++) {
     if (i < numbers.length - 1) {
-      stdout.write('${numbers[i]},');
+      stdout.write('${numbers[i]}$separator');
     } else {
-      stdout.writeln(numbers[i]);
+      stdout.writeln('${numbers[i]}$endMark');
     }
   }
 }
 
-
-void printSumOfNumbers({String message = ' ', required String numbers}) {
-  stdout.write(message);
+int getSum({required String numbers}) {
   int sum = 0;
   for (int i = 0; i < numbers.length; i++) {
-    if (i < numbers.length - 1) {
-      stdout.write('${numbers[i]}+');
-    } else {
-      stdout.write('${numbers[i]}=');
-    }
     int value = int.parse(numbers[i]);
     sum += value;
   }
-  return stdout.writeln(sum);
+  return sum;
 }
