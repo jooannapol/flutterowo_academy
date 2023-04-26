@@ -1,5 +1,5 @@
 void main() {
-  String repeatString(int n, String s) => s * n;
-  print(repeatString(3, 'asdfg'));
-}
+  num opposite(num n) => -n;
 
+  print(opposite(-2));
+}
