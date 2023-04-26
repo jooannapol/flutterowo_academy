@@ -18,7 +18,6 @@ void main() {
     if (isEven(enteredNumbers, i)) {
       //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
       evenNumbers += enteredNumbers[i]; //evenNumbers = 4
-
     } else {
       oddNumbers += enteredNumbers[i]; //oddNumbers = 3, oddNumbers = 5
     }
@@ -40,6 +39,8 @@ void main() {
       endMark: '=');
 
    stdout.write(getSum(numbers: enteredNumbers));
+  List<String> test = ["1", "5", "6"];
+  print(test.join("+"));
 }
 
 
@@ -62,7 +63,7 @@ void printListOfNumbers(
     if (i < numbers.length - 1) {
       stdout.write('${numbers[i]}$separator');
     } else {
-      stdout.writeln('${numbers[i]}$endMark');
+      stdout.write('${numbers[i]}$endMark');
     }
   }
 }
