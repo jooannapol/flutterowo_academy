@@ -1,5 +1,12 @@
 void main() {
-  num opposite(num n) => -n;
-
-  print(opposite(-2));
+  int squareSum(List numbers)
+  {
+    int sum = 0;
+    for (int number in numbers) {
+      sum += (number * number);
+    }
+    return sum;
+  }
+  
+  print(squareSum([1,2,2]));
 }
