@@ -1,12 +1,10 @@
 void main() {
-  int squareSum(List numbers)
-  {
-    int sum = 0;
-    for (int number in numbers) {
-      sum += (number * number);
+  num makeNegative(n) {
+    if (n>0){
+    return  -n;
     }
-    return sum;
+    else return n;
   }
-  
-  print(squareSum([1,2,2]));
+
+  print(makeNegative(-9));
 }
