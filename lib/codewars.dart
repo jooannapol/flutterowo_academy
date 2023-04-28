@@ -1,3 +1,9 @@
 void main() {
-  int stringToNumber(String str) => int.parse(str);
+  String bool_to_word(bool boolean) {
+    if (boolean) {
+      return 'Yes';
+    } else {
+      return 'No';
+    }
+  }
 }
