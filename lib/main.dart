@@ -2,13 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import 'NumbersFilter.dart';
+
 void main() {
-
-
-  String getNumber() {
-    stdout.writeln('Enter numbers');
-    String enteredNumbers = stdin.readLineSync() ?? '';
-    return enteredNumbers;
-  }
+  String enteredNumbers = getNumber();
+  var numbers = NumbersFilter(enteredNumbers: enteredNumbers);
 }
 

@@ -28,4 +28,3 @@ class NumbersFilter {
       int.parse(enteredNumbers[index]) % 2 == 0;
 }
 
-}

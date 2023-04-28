@@ -1,6 +1,9 @@
 import 'dart:io';
 
-void main() {
+class NumbersOperations {
+  String numbers = '';
+
+}
   /*
   1. Pobrać liczbę od użytkownika DONE
   2. Pobrac dlugosc ciagu przeslanego przez uzytkownika DONE
@@ -11,17 +14,7 @@ void main() {
    */
 
   String enteredNumbers = getNumber();
-  String evenNumbers = '';
-  String oddNumbers = '';
-  for (int i = 0; i < enteredNumbers.length; i++) {
-    //i = 0
-    if (isEven(enteredNumbers, i)) {
-      //enterNumbers[0] = '4' (-> 4) 4%2 = 0 tzn ze true
-      evenNumbers += enteredNumbers[i]; //evenNumbers = 4
-    } else {
-      oddNumbers += enteredNumbers[i]; //oddNumbers = 3, oddNumbers = 5
-    }
-  }
+
 
   printListOfNumbers(
     message: 'Even numbers ',
@@ -44,8 +37,6 @@ void main() {
 }
 
 
-bool isEven(String enteredNumbers, int index) =>
-    int.parse(enteredNumbers[index]) % 2 == 0;
 
 String getNumber() {
   stdout.writeln('Enter numbers');
