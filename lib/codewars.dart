@@ -1,6 +1,5 @@
 void main() {
-  String numberToString(int n) => n.toString();
+  int square(int n) => n*n;
 
-
-  print(numberToString(1234));
+  print(square(50));
 }
