@@ -1,6 +1,14 @@
 void main() {
-  List<int> reverseList(List<int> list) {
-    return list.reversed.toList();
+  String evenOrOdd(int number) {
+    if (number % 2 == 0) {
+      return 'Even';
+    } else {
+      return 'Odd';
+    }
   }
-  print(reverseList([1,2,3,4]));
+
+  print(evenOrOdd(5));
+  print(evenOrOdd(8));
+  print(evenOrOdd(123));
+  print(evenOrOdd(0));
 }
