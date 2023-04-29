@@ -1,3 +1,4 @@
 void main() {
-  int doubleInteger(int i) => 2*i;
-}
+  String solution(str) {
+    return str.split('').reversed.join('');
+  }
