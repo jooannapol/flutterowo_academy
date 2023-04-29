@@ -1,3 +1,3 @@
 void main() {
-  String booleanToString(bool b) => b.toString();
+  int doubleInteger(int i) => 2*i;
 }
