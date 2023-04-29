@@ -1,5 +1,3 @@
 void main() {
-  int square(int n) => n*n;
-
-  print(square(50));
+  String booleanToString(bool b) => b.toString();
 }
